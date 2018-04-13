@@ -1,0 +1,106 @@
+/* Responsive code for home page div */
+*{
+box-sizing:border-box; 
+-web-box-sizing:border-box;
+-moz-box-sizing:border-box;
+-o-box-sizing:border-box;
+-ms-box-sizing:border-box;
+}
+
+.header{
+max-width:1200px;
+margin:0 auto;
+padding: 0;
+height:100px;
+background:#0c9;
+}
+
+/*.head{*/
+/*text-align:center;*/
+/*}*/
+.main{
+max-width:1200px;
+margin:0 auto;
+padding: 0;
+}
+
+.button{
+font-size:18px;
+}
+
+.box-back{
+width:100%;
+height:auto;
+margin:0 ;
+padding: 0;
+float:left;
+}
+
+/*.box-back li:hover{*/
+/*background:#3A5BA2;*/
+	/*-moz-border-radius: 80px;*/
+	/*-webkit-border-radius: 80px;*/
+	/*border-radius: 80px;*/
+/*}*/
+
+.box-back li{
+width:20%;
+height:auto;
+margin:0 0 20px 0;
+padding: 0 20px;
+float:left;
+list-style:none;
+}
+
+.box-back li .portion{
+	width: 218px;
+	height: 205px;
+	margin: 0 0 0 0;
+	padding: 40px 40px;
+	float: left;
+	list-style: none;
+	background: #A3C9D6;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.footer{
+/*background-color:#3A5BA2;*/
+color:white;
+padding:38px;
+float:left;
+width:100%
+}
+
+.footer1{
+clear:both;
+background-color:#11584a;
+margin:0;padding:20px;
+color:white;
+text-align:center
+}
+.footer1 a{color:#fff;}
+
+/* Responsive media queries */
+@media only screen and (min-width: 260px) and (max-width: 319px){
+.box-back li{ width:100%;}
+
+}
+@media only screen and (min-width: 320px) and (max-width: 479px){
+.box-back li{ width:100%;}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+.box-back li{ width:50%;}
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+.box-back li{ width:25% ;}
+
+}
+@media only screen and (min-width: 1024px) and (max-width: 1159px){
+
+}
