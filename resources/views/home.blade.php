@@ -81,27 +81,30 @@
                     <br/>
                     <br/>
                     <hr/>
-                    <h2>Features of {{$subtopic->title}} Programming</h2>
+                    @if(!empty($subtopic->features_one_question))
+                        <h2>Features of {{$subtopic->title}} Programming</h2>
+                        @endif
+
                     <ol type="1">
-                        @if(!empty($subtopic->features_headone))
-                            <li><strong>{{$subtopic->features_headone}}</strong><br/>
+                        @if(!empty($subtopic->features_one_question))
+                            <li><strong>{{$subtopic->features_one_question}}</strong><br/>
                                 <pre>
-{{$subtopic->features_headone}}
+{{$subtopic->features_one_ans}}
                             </pre>
                             </li>
                         @endif
                             <br/>
-                            @if(!empty($subtopic->features_headtwo))
-                            <li><strong>{{$subtopic->features_headtwo}}</strong><br/>
+                            @if(!empty($subtopic->features_two_question))
+                            <li><strong>{{$subtopic->features_two_question}}</strong><br/>
                                 <pre>
-{{$subtopic->features_headtwo}}
+{{$subtopic->features_two_ans}}
 </pre></li>
                             @endif
                                 <br/>
-                            @if(!empty($subtopic->features_headthree))
-                            <li><strong>{{$subtopic->features_headthree}}</strong><br/>
+                            @if(!empty($subtopic->features_three_question))
+                            <li><strong>{{$subtopic->features_three_question}}</strong><br/>
                                 <pre>
-{{$subtopic->features_headthree}}
+{{$subtopic->features_three_ans}}
                                 </pre></li>
                             @endif
 
@@ -164,27 +167,30 @@
                     <br/>
                     <br/>
                     <hr/>
-                    <h2>Features of {{$hellopage->title}} Programming</h2>
+                    @if(!empty($hellopage->features_one_question))
+                        <h2>Features of {{$hellopage->title}} Programming</h2>
+                        @endif
+
                     <ol type="1">
-                        @if(!empty($hellopage->features_headone))
-                            <li><strong>{{$hellopage->features_headone}}</strong><br/>
+                        @if(!empty($hellopage->features_one_question))
+                            <li><strong>{{$hellopage->features_one_question}}</strong><br/>
                                 <pre>
-{{$hellopage->features_headone}}
+{{$hellopage->features_one_ans}}
                             </pre>
                             </li>
                         @endif
                             <br/>
-                        @if(!empty($hellopage->features_headtwo))
-                            <li><strong>{{$hellopage->features_headtwo}}</strong><br/>
+                        @if(!empty($hellopage->features_two_question))
+                            <li><strong>{{$hellopage->features_two_question}}</strong><br/>
                                 <pre>
-{{$hellopage->features_headtwo}}
+{{$hellopage->features_two_ans}}
 </pre>
                                 @endif
                                 <br/>
-                        @if(!empty($hellopage->features_headthree))
-                            <li><strong>{{$hellopage->features_headthree}}</strong><br/>
+                        @if(!empty($hellopage->features_three_question))
+                            <li><strong>{{$hellopage->features_three_question}}</strong><br/>
                                 <pre>
-{{$hellopage->features_headthree}}
+{{$hellopage->features_three_ans}}
 </pre>
                         @endif
 

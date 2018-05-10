@@ -159,10 +159,12 @@ class AdminController extends Controller
                 "quest_headfive" => $request->quest_headfive,
                 "example_quest" => $request->example_quest,
                 "example" => $request->example,
-                "features_headone" => $request->features_headone,
-                "features_headtwo" => $request->features_headtwo,
-                "features_headthree" => $request->features_headthree,
-                "features_headfour" => $request->features_headfour
+                "features_one_question" => $request->features_one_question,
+                "features_one_ans" => $request->features_one_ans,
+                "features_two_question" => $request->features_two_question,
+                "features_two_ans" => $request->features_two_ans,
+                "features_three_question" => $request->features_three_question,
+                "features_three_ans" => $request->features_three_ans
             ]
         );
         return view('admin/home');

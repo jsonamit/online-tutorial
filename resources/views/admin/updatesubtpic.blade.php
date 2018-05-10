@@ -138,23 +138,26 @@
 
                 </div>
                 <div class="row">
-                    {{--<div class="col-md-6">--}}
-                        {{--<div class="form-group">--}}
-                            {{--<label for="name">Example</label>--}}
-                            {{--<input type="text" placeholder="Example" class="form-control"value="{{$sub->example}}" name="example" id="name">--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Output</label>
                             <input type="text" placeholder="Output" class="form-control"value="{{$sub->output}}" name="output" id="name">
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-md-6">
 
                         <div class="form-group">
-                            <label for="name">Features head one</label>
-                            <input type="text" placeholder="Features head one" class="form-control"value="{{$sub->features_headone}}" name="features_headone" id="name">
+                            <label for="name">Features head question</label>
+                            <input type="text" placeholder="Features head question" class="form-control"value="{{$sub->features_one_question}}" name="features_one_question" id="name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            <label for="name">Features head ans</label>
+                            <input type="text" placeholder="Features head ans" class="form-control" value="{{$sub->features_one_ans}}" name="features_one_ans" id="name">
                         </div>
                     </div>
                 </div>
@@ -163,14 +166,14 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="name">Features head two</label>
-                            <input type="text" placeholder="Features head two" class="form-control"value="{{$sub->features_headtwo}}" name="features_headtwo" id="name">
+                            <label for="name">Features head question</label>
+                            <input type="text" placeholder="Features head question" class="form-control"value="{{$sub->features_two_question}}" name="features_two_question" id="name">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="name">Features head three</label>
-                            <input type="text" placeholder="Features head three" class="form-control"value="{{$sub->features_headthree}}" name="features_headthree" id="name">
+                            <label for="name">Features head ans</label>
+                            <input type="text" placeholder="Features head ans" class="form-control"value="{{$sub->features_two_ans}}" name="features_two_ans" id="name">
                         </div>
                     </div>
                 </div>
@@ -178,17 +181,22 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="name">Features head four</label>
-                            <input type="text" placeholder="Features head four"  class="form-control"value="{{$sub->features_headfour}}" name="features_headfour" id="name">
+                            <label for="name">Features head question</label>
+                            <input type="text" placeholder="Features head question"  class="form-control"value="{{$sub->features_three_question}}" name="features_three_question" id="name">
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="name"></label>
-                        <button type="submit" style="margin-bottom: 25px;" class="btn btn-block btn-success">Update</button>
+                        <div class="form-group">
+                            <label for="name">Features head ans</label>
+                            <input type="text" placeholder="Features head ans"  class="form-control"value="{{$sub->features_three_ans}}" name="features_three_ans" id="name">
+                        </div>
                     </div>
                 </div>
 
-
+                <div class="col-md-6">
+                    <label for="name"></label>
+                    <button type="submit" style="margin-bottom: 25px;" class="btn btn-block btn-success">Update</button>
+                </div>
             </form>
         </div>
     {{--</div>--}}

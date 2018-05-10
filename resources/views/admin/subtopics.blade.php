@@ -155,23 +155,26 @@
 
                 </div>
                 <div class="row">
-                    {{--<div class="col-md-6">--}}
-                        {{--<div class="form-group">--}}
-                            {{--<label for="name">Example</label>--}}
-                            {{--<input type="text" placeholder="Example" class="form-control" name="example" id="name" required>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Output</label>
                             <input type="text" placeholder="Output answer" class="form-control" name="output" id="name" required>
                         </div>
                     </div>
+                </div>
+                <div class="row">
+
                     <div class="col-md-6">
 
                         <div class="form-group">
-                            <label for="name">Features head one</label>
-                            <input type="text" placeholder="Features head answer" class="form-control" name="features_headone" id="name" required>
+                            <label for="name">Features head question</label>
+                            <input type="text" placeholder="Features head question" class="form-control" name="features_one_question" id="name" >
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">Features head answer</label>
+                            <input type="text" placeholder="Features head answer" class="form-control" name="features_one_ans" id="name" >
                         </div>
                     </div>
                 </div>
@@ -180,14 +183,14 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="name">Features head two</label>
-                            <input type="text" placeholder="Features head answer" class="form-control" name="features_headtwo" id="name">
+                            <label for="name">Features head question</label>
+                            <input type="text" placeholder="Features head question" class="form-control" name="features_two_question" id="name">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="name">Features head three</label>
-                            <input type="text" placeholder="Features head answer" class="form-control" name="features_headthree" id="name">
+                            <label for="name">Features head answer</label>
+                            <input type="text" placeholder="Features head answer" class="form-control" name="features_two_ans" id="name">
                         </div>
                     </div>
                 </div>
@@ -195,10 +198,17 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="name">Features head four</label>
-                            <input type="text" placeholder="Features head answer"  class="form-control" name="features_headfour" id="name">
+                            <label for="name">Features head question</label>
+                            <input type="text" placeholder="Features head question"  class="form-control" name="features_three_question" id="name">
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">Features head answer</label>
+                            <input type="text" placeholder="Features head answer"  class="form-control" name="features_three_ans" id="name">
+                        </div>
+                    </div>
+
                 </div>
 
 
