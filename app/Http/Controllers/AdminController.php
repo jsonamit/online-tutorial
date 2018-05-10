@@ -34,17 +34,20 @@ class AdminController extends Controller
 
     public function dropdowntopics()
     {
+        $lang=Lang::select('*')->get();
         $topic = Topic::select('*')->get();
-        return view('admin/subtopics')->with(['topic' => $topic]);
+        return view('admin/subtopics')->with(['topic' => $topic,'lang'=>$lang]);
     }
 
     public function topicinsert(Request $request)
     {
+
         $body = $request->all();
+        //echo $body;
         unset($body['_token']);
         $user = new Topic($body);
         $user->save();
-        return view('admin.topics');
+        return redirect(route('topic.get'));
     }
 
     public function bindlang()
@@ -77,10 +80,14 @@ class AdminController extends Controller
         return view('admin/home');
     }
 
-    public function bindtopics()
+    public function bindtopics(Request $request)
     {
+        $id = $request->lang_id;
+        $lang = Lang::select('*')->get();
+        $lg = Lang::where('id', $request->lang_id)->first();
         $topic = Topic::select('*')->get();
-        return view('admin/bindtopics')->with(['topic' => $topic]);
+        $topicbylangid = Topic::where('lang_id', $request->lang_id)->get();
+        return view('admin/bindtopics')->with(['topic' => $topic, 'lang' => $lang, 'langname' => $lg, 'langid' => $id, 'topicbylangid' => $topicbylangid]);
     }
 
     public function deletetopics(Request $request)
@@ -97,10 +104,15 @@ class AdminController extends Controller
         return view('home')->with(['langs' => $topic, 'lang_id' => $request->id, 'subtopic' => $subtopic, 'hellopage' => $hellopage]);
     }
 
-    public function bindsubtopic()
+    public function bindsubtopic(Request $request)
     {
+
         $topic = Sub_topic::select('*')->get();
-        return view('admin/bindsubtopics')->with(['subtopic' => $topic]);
+        $subtopicbyid = Sub_topic::where('topics_id',$request->topic_id)->get();
+        $lang=Lang::select('*')->get();
+        $langbyid=Lang::where('id',$request->lang_id)->first();
+        $topicbyid=Topic::where('id',$request->topic_id)->first();
+        return view('admin/bindsubtopics')->with(['subtopic' => $topic,'subtopicbyid'=>$subtopicbyid,'lang'=>$lang,'langid'=>$request->lang_id,'langname'=>$langbyid,'topicname'=>$topicbyid]);
     }
 
     public function indexlang()
@@ -137,7 +149,7 @@ class AdminController extends Controller
 
         Sub_topic::where('id', $request->id)->update(
             [
-                "topics_id" => 6,
+//                "topics_id" => $request->id,
                 "title" => $request->title,
                 "description" => $request->description,
                 "quest_headone" => $request->quest_headone,
@@ -174,13 +186,10 @@ class AdminController extends Controller
 
     public function login(Request $request)
     {
-        $login= Loginuser::where('password',$request->password)->where('username',$request->username)->first();
-        if(!empty($login))
-        {
+        $login = Loginuser::where('password', $request->password)->where('username', $request->username)->first();
+        if (!empty($login)) {
             return view('admin/home');
-        }
-        else
-        {
+        } else {
             return view('admin/login');
         }
 
@@ -190,4 +199,39 @@ class AdminController extends Controller
     {
         return view('admin/signup');
     }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function topicupdate(Request $request)
+    {
+        $top = Topic::where('id', $request->id)->first();
+        return view('admin/topicupdate')->with(['topic' => $top]);
+    }
+
+    public function topicupdateubmit(Request $request)
+    {
+        Topic::where('id', $request->id)->update(
+            [
+                "topic" => $request->topic
+            ]
+        );
+        return redirect(route('topic.get'));
+    }
+
+    public function subtopicgetbyid(Request $request)
+    {
+        $topic=Topic::where('lang_id',$request->langid)->get();
+        return response()->json($topic);
+      //return view('admin/bindsubtopics')->with(['ab'=>$ab]);
+    }
+
+
 }

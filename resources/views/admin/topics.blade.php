@@ -4,7 +4,8 @@
 
         <div class="row" style="margin-top: 7%">
             <div class="col-md-4 col-md-offset-3">
-                <form  action="{{route('topic.insert')}}" method="get">
+                <form  action="{{route('topic.insert')}}" method="post">
+                    {{csrf_field()}}
                 {{--<form  action="" method="get">--}}
                     <div class="form-group">
                         <label for="name">Languages</label>

@@ -21,6 +21,8 @@
             </div>
         </div>
         <div class="col-md-8">
+
+            @if(!empty($hellopage))
             @if(!empty($subtopic))
                 <div class="row">
 
@@ -37,13 +39,13 @@
                             <li>{{$subtopic->quest_headone}}</li>
                         @endif
                             @if(!empty($subtopic->quest_headtwo))
-                            <li>{{$subtopic->quest_headtwo}}.</li>
+                            <li>{{$subtopic->quest_headtwo}}</li>
                             @endif
                             @if(!empty($subtopic->quest_headthree))
-                            <li>{{$subtopic->quest_headthree}}.</li>
+                            <li>{{$subtopic->quest_headthree}}</li>
                           @endif
                             @if(!empty($subtopic->quest_headfour))
-                                <li>{{$subtopic->quest_headfour}}.</li>
+                                <li>{{$subtopic->quest_headfour}}</li>
                             @endif
 
                     </ul>
@@ -122,13 +124,13 @@
                             <li>{{$hellopage->quest_headone}}</li>
                         @endif
                         @if(!empty($hellopage->quest_headtwo))
-                            <li>{{$hellopage->quest_headtwo}}.</li>
+                            <li>{{$hellopage->quest_headtwo}}</li>
                             @endif
                         @if(!empty($hellopage->quest_headthree))
-                            <li>{{$hellopage->quest_headthree}}.</li>
+                            <li>{{$hellopage->quest_headthree}}</li>
                         @endif
                             @if(!empty($hellopage->quest_headfour))
-                                <li>{{$hellopage->quest_headfour}}.</li>
+                                <li>{{$hellopage->quest_headfour}}</li>
                             @endif
 
                     </ul>
@@ -190,8 +192,10 @@
                 </div>
             @endif
 
+                @else
+                @php redirect(route('languages')); @endphp
+            @endif
+
         </div>
-
     </div>
-
 @endsection

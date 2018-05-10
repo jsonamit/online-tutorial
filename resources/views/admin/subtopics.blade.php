@@ -21,16 +21,43 @@
         <div class="col-md-9">
             <form action="{{route('subtopic.insert')}}" method="post">
                 {{ csrf_field() }}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">Languages</label>
+                            <select class="form-control" name="lang_id" id="lang">
+
+                                <option value="none">none</option>
+                                @foreach($lang as $l)
+                                    <option value="{{$l->id}}">{{$l->langname}}</option>
+                                @endforeach
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
                  <div class="row">
                      <div class="col-md-6">
-                     <div class="form-group">
-                         <label for="name">Languages</label>
-                         <select class="form-control" name="topics_id" id="sel1">
-                             @foreach($topic as $l)
-                                 <option value="{{$l->id}}">{{$l->topic}}</option>
-                             @endforeach
-                         </select>
-                     </div>
+                     {{--<div class="form-group">--}}
+                         {{--<label for="name">Languages</label>--}}
+                         {{--<select class="form-control" name="topics_id" id="sel1">--}}
+                             {{--@foreach($topic as $l)--}}
+                                 {{--<option value="{{$l->id}}">{{$l->topic}}</option>--}}
+                             {{--@endforeach--}}
+                         {{--</select>--}}
+                     {{--</div>--}}
+
+                         {{--<div class="col-md-6">--}}
+                             <div class="form-group">
+                                 <label for="name">Topics</label>
+                                 <select class="form-control" name="topics_id" id="topicid">
+
+                                     <option value="none" id="lang_topic">none</option>
+
+                                 </select>
+                             </div>
+                         {{--</div>--}}
+
                      </div>
                      <div class="col-md-6">
                          <div class="form-group">
@@ -70,13 +97,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Question head one</label>
-                            <input type="text" placeholder="head one" class="form-control" name="quest_headone" id="name" required>
+                            <input type="text" placeholder="Question head answer" class="form-control" name="quest_headone" id="name" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Question head two</label>
-                            <input type="text" placeholder="head two" class="form-control" name="quest_headtwo" id="name" required>
+                            <input type="text" placeholder="Question head answer" class="form-control" name="quest_headtwo" id="name" required>
                         </div>
                     </div>
                 </div>
@@ -84,13 +111,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Question head three</label>
-                            <input type="text" placeholder="head three" class="form-control" name="quest_headthree" id="name">
+                            <input type="text" placeholder="Question head answer" class="form-control" name="quest_headthree" id="name">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Question head four</label>
-                            <input type="text" placeholder="head four" class="form-control" name="quest_headfour" id="name">
+                            <input type="text" placeholder="Question head answer" class="form-control" name="quest_headfour" id="name">
                         </div>
                     </div>
                 </div>
@@ -98,13 +125,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Question head five</label>
-                            <input type="text" placeholder="head five" class="form-control" name="quest_headfive" id="name">
+                            <input type="text" placeholder="Question head answer" class="form-control" name="quest_headfive" id="name">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Example question</label>
-                            <input type="text" placeholder="Example question" class="form-control" name="example_quest" id="name" required>
+                            <input type="text" placeholder="Example question " class="form-control" name="example_quest" id="name" required>
                         </div>
                     </div>
                 </div>
@@ -137,14 +164,14 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Output</label>
-                            <input type="text" placeholder="Output" class="form-control" name="output" id="name" required>
+                            <input type="text" placeholder="Output answer" class="form-control" name="output" id="name" required>
                         </div>
                     </div>
                     <div class="col-md-6">
 
                         <div class="form-group">
                             <label for="name">Features head one</label>
-                            <input type="text" placeholder="Features head one" class="form-control" name="features_headone" id="name" required>
+                            <input type="text" placeholder="Features head answer" class="form-control" name="features_headone" id="name" required>
                         </div>
                     </div>
                 </div>
@@ -154,13 +181,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Features head two</label>
-                            <input type="text" placeholder="Features head two" class="form-control" name="features_headtwo" id="name">
+                            <input type="text" placeholder="Features head answer" class="form-control" name="features_headtwo" id="name">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Features head three</label>
-                            <input type="text" placeholder="Features head three" class="form-control" name="features_headthree" id="name">
+                            <input type="text" placeholder="Features head answer" class="form-control" name="features_headthree" id="name">
                         </div>
                     </div>
                 </div>
@@ -169,7 +196,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Features head four</label>
-                            <input type="text" placeholder="Features head four"  class="form-control" name="features_headfour" id="name">
+                            <input type="text" placeholder="Features head answer"  class="form-control" name="features_headfour" id="name">
                         </div>
                     </div>
                 </div>
@@ -186,5 +213,19 @@
 
             </form>
         </div>
-    {{--</div>--}}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script>
+        $('#lang').on('change', function(e){
+            console.log(e);
+            var lang_id = e.target.value;
+
+            $.get('/admin/subtopicgetbylangid?langid=' + lang_id, function(data) {
+                console.log(data);
+                $('#topicid').empty();
+                $.each(data, function(index,subCatObj){
+                    $("#topicid").append($("<option></option>").val(subCatObj.id).html(subCatObj.topic));
+                });
+            });
+        });
+    </script>
 @endsection
