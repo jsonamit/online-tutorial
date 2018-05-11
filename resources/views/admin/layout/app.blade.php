@@ -25,7 +25,7 @@
             </button>
             <a class="navbar-brand" href="#" >WELCOME TO ADMIN</a>
         </div>
-
+        <h4 class="pull-right" style="margin-right: -80px;margin-top: 15px;"><a href="{{route('login.submit')}}">Logout</a></h4>
     </div><!-- /.container -->
 </nav><!-- /.navbar -->
 <div class="container-fluid">
