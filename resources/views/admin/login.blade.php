@@ -99,5 +99,5 @@
     <input type="password" value="" placeholder="Password" name="password" id="password" />
     <button type="submit">Login</button>
     </form>
-    <a href="{{route('user.signup')}}"><button >Sign Up</button></a>
+{{--    <a href="{{route('user.signup')}}"><button >Sign Up</button></a>--}}
 </div>

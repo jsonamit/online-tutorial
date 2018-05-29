@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2018 at 07:49 PM
+-- Generation Time: May 29, 2018 at 02:49 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -85,12 +85,10 @@ INSERT INTO `langs` (`id`, `langname`, `updated_at`, `created_at`) VALUES
 (32, 'HTML', '2018-02-20', '2018-02-20'),
 (33, 'CSS', '2018-02-20', '2018-02-20'),
 (34, 'JavaScript', '2018-02-20', '2018-02-20'),
-(35, 'Php', '2018-02-20', '2018-02-20'),
 (36, 'Sql', '2018-02-20', '2018-02-20'),
 (37, 'Android', '2018-02-20', '2018-02-20'),
-(40, 'pithon', '2018-03-07', '2018-03-07'),
-(42, 'fgfhrf', '2018-05-07', '2018-05-07'),
-(43, 'muku', '2018-05-10', '2018-05-10');
+(40, 'puython', '2018-05-23', '2018-03-07'),
+(45, 'php laravel', '2018-05-23', '2018-05-23');
 
 -- --------------------------------------------------------
 
@@ -216,7 +214,9 @@ INSERT INTO `topics` (`id`, `lang_id`, `topic`, `updated_at`, `created_at`) VALU
 (36, 33, 'Align', '2018-05-09', '2018-05-09'),
 (37, 33, 'Forms', '2018-05-09', '2018-05-09'),
 (38, 37, 'zzzzzz', '2018-05-10', '2018-05-10'),
-(39, 43, 'string', '2018-05-10', '2018-05-10');
+(39, 43, 'string', '2018-05-10', '2018-05-10'),
+(40, 44, 'function', '2018-05-11', '2018-05-11'),
+(41, 44, 'string', '2018-05-11', '2018-05-11');
 
 -- --------------------------------------------------------
 
@@ -293,7 +293,7 @@ ALTER TABLE `hello_langs`
 -- AUTO_INCREMENT for table `langs`
 --
 ALTER TABLE `langs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT for table `loginusers`
 --
@@ -313,7 +313,7 @@ ALTER TABLE `sub_topics`
 -- AUTO_INCREMENT for table `topics`
 --
 ALTER TABLE `topics`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `users`
 --
